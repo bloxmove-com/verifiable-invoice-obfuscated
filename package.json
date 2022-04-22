@@ -1,0 +1,49 @@
+{
+  "name": "@bloxmove-com/verifiable-invoice-obfuscated",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bloxmove-com/verifiable-invoice-obfuscated.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "docs": "typedoc --out docs src",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "lint:fix": "tslint -p tsconfig.json --fix",
+    "tsc:version": "tsc --version",
+    "prepare": "husky install .husky",
+    "test:hardhat": "jest --config jestconfig.json --forceExit --runInBand --verbose --web3Provider=hardhat",
+    "build:obfuscated": "npm run build && javascript-obfuscator ./lib --output ./lib-obfuscated"
+  },
+  "keywords": [],
+  "author": "bloXmove",
+  "license": "ISC",
+  "dependencies": {
+    "@bloxmove-com/did-asset-library-core-obfuscated": "0.0.21",
+    "did-resolver": "^3.1.5",
+    "dotenv": "^8.2.0",
+    "husky": "^7.0.4",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "@jest/types": "^27.5.1",
+    "@types/jest": "^24.9.1",
+    "jest": "^24.9.0",
+    "prettier": "^2.0.0",
+    "ts-jest": "^24.3.0",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.0",
+    "typedoc": "^0.19.0",
+    "typescript": "4.0.3"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
