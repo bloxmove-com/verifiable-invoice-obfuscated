@@ -1,5 +1,5 @@
 import { Algorithm } from 'jsonwebtoken';
-import { VerifiableInvoiceUtilService, VerifiableInvoice } from '../classes/verifiable-invoice.class';
+import { VerifiableInvoiceUtilService } from '../classes/verifiable-invoice.class';
 export interface JWTVerifiableInvoiceUtilServiceOptions {
     privateKey: string;
     subject: string;
@@ -19,5 +19,5 @@ export declare class JWTVerifiableInvoiceUtilService implements VerifiableInvoic
         id: string;
         [key: string]: any;
     }>): Promise<string>;
-    verify(invoice: string): Promise<VerifiableInvoice | string | undefined>;
+    verify(invoice: string): Promise<string>;
 }

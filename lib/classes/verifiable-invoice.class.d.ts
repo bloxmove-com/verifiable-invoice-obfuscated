@@ -1,5 +1,5 @@
-import { VerifiableCredential } from '@bloxmove-com/did-asset-library-core-obfuscated';
-export declare type VerifiableInvoice = VerifiableCredential;
+import { VerifiablePresentation, VerifiableCredential } from '@bloxmove-com/did-asset-library-core-obfuscated';
+export declare type VerifiableInvoice = VerifiablePresentation;
 /**
  * Interface that an invoice service has to implement.
  */
@@ -21,7 +21,7 @@ export interface VerifiableInvoiceUtilService {
      * Verifies a signed invoice
      * @param {VerifiableInvoice | string} invoice the invoice
      *
-     * @returns {VerifiableInvoice | string | undefined}
+     * @returns {VerifiableCredential[] | string | undefined}
      */
-    verify(invoice: VerifiableInvoice | string): Promise<VerifiableInvoice | string | undefined>;
+    verify(invoice: VerifiableInvoice | string): Promise<VerifiableCredential[] | string | undefined>;
 }
